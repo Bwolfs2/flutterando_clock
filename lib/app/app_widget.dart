@@ -9,11 +9,11 @@ class AppWidget extends StatelessWidget {
       themeMode: ThemeMode.dark,
       theme: ThemeData(
         primaryColor: Color(0xff1A1A1A),     
-        backgroundColor: Color(0xffF9F9F9),
+        backgroundColor: Color(0xffFFFFFF),
         accentColor: Color(0xffA72D1E)
       ),
       darkTheme: ThemeData(
-        backgroundColor: Color(0xff141414),
+        backgroundColor: Color(0xff171717),
         
         primaryColor: Colors.white,   
         accentColor: Color(0xffA72D1E)

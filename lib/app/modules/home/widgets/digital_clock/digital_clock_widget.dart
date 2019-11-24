@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutterando_clock/app/modules/home/home_module.dart';
@@ -13,9 +14,13 @@ class DigitalClockWidget extends StatelessWidget {
     var style = TextStyle(color: Theme.of(context).primaryColor);
 
     return Observer(
-      builder: (_) => Text(
+      builder: (_) => AutoSizeText(
         "${DateFormat("HH:mm:ss").format(controller.date)}",
-        style: style.copyWith(fontSize: 80, fontWeight: FontWeight.bold),
+        style: style.copyWith(
+          fontSize: 80,
+          fontWeight: FontWeight.bold,
+        ),
+        maxLines: 1,
       ),
     );
   }

@@ -37,46 +37,51 @@ class _HomePageState extends State<HomePage> {
       );
     }
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
-      body: Padding(
-        padding: const EdgeInsets.all(30),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
+      backgroundColor: Theme.of(context).backgroundColor.withOpacity(.9),
+      body: SingleChildScrollView(
+        child: Container(
+          height: MediaQuery.of(context).size.height,
+          child: Padding(
+            padding: const EdgeInsets.all(30),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                Text(
-                  "${date.day}",
-                  style:
-                      style.copyWith(fontSize: 50, fontWeight: FontWeight.w300),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    Text(
+                      "${date.day}",
+                      style:
+                          style.copyWith(fontSize: 50, fontWeight: FontWeight.w300),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10, left: 10),
+                      child: Text(
+                        "${DateFormat("MMM y").format(date)}",
+                        style: style.copyWith(
+                            fontSize: 20, fontWeight: FontWeight.w300),
+                      ),
+                    )
+                  ],
                 ),
+                Text(
+                  "STUDY ENGLISH",
+                  style: style.copyWith(fontSize: 25, fontWeight: FontWeight.w300),
+                ),
+                DigitalClockWidget(),
+                ClockWidget(),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 10, left: 10),
+                  padding: const EdgeInsets.all(40),
                   child: Text(
-                    "${DateFormat("MMM y").format(date)}",
-                    style: style.copyWith(
-                        fontSize: 20, fontWeight: FontWeight.w300),
+                    "The alarm will go off in 2 hours 10 minutes",
+                    style:
+                        style.copyWith(fontSize: 25, fontWeight: FontWeight.w200),
+                    textAlign: TextAlign.center,
                   ),
-                )
+                ),
               ],
             ),
-            Text(
-              "STUDY ENGLISH",
-              style: style.copyWith(fontSize: 25, fontWeight: FontWeight.w300),
-            ),
-            DigitalClockWidget(),
-            ClockWidget(),
-            Padding(
-              padding: const EdgeInsets.all(40),
-              child: Text(
-                "The alarm will go off in 2 hours 10 minutes",
-                style:
-                    style.copyWith(fontSize: 25, fontWeight: FontWeight.w200),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
