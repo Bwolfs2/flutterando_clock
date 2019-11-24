@@ -12,14 +12,14 @@ mixin _$ClockController on _ClockBase, Store {
   final _$minutesAngleAtom = Atom(name: '_ClockBase.minutesAngle');
 
   @override
-  int get minutesAngle {
+  double get minutesAngle {
     _$minutesAngleAtom.context.enforceReadPolicy(_$minutesAngleAtom);
     _$minutesAngleAtom.reportObserved();
     return super.minutesAngle;
   }
 
   @override
-  set minutesAngle(int value) {
+  set minutesAngle(double value) {
     _$minutesAngleAtom.context.conditionallyRunInAction(() {
       super.minutesAngle = value;
       _$minutesAngleAtom.reportChanged();
@@ -29,14 +29,14 @@ mixin _$ClockController on _ClockBase, Store {
   final _$secondsAngleAtom = Atom(name: '_ClockBase.secondsAngle');
 
   @override
-  int get secondsAngle {
+  double get secondsAngle {
     _$secondsAngleAtom.context.enforceReadPolicy(_$secondsAngleAtom);
     _$secondsAngleAtom.reportObserved();
     return super.secondsAngle;
   }
 
   @override
-  set secondsAngle(int value) {
+  set secondsAngle(double value) {
     _$secondsAngleAtom.context.conditionallyRunInAction(() {
       super.secondsAngle = value;
       _$secondsAngleAtom.reportChanged();
@@ -46,14 +46,14 @@ mixin _$ClockController on _ClockBase, Store {
   final _$hoursAngleAtom = Atom(name: '_ClockBase.hoursAngle');
 
   @override
-  int get hoursAngle {
+  double get hoursAngle {
     _$hoursAngleAtom.context.enforceReadPolicy(_$hoursAngleAtom);
     _$hoursAngleAtom.reportObserved();
     return super.hoursAngle;
   }
 
   @override
-  set hoursAngle(int value) {
+  set hoursAngle(double value) {
     _$hoursAngleAtom.context.conditionallyRunInAction(() {
       super.hoursAngle = value;
       _$hoursAngleAtom.reportChanged();

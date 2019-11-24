@@ -65,9 +65,8 @@ class _HomePageState extends State<HomePage> {
               "STUDY ENGLISH",
               style: style.copyWith(fontSize: 25, fontWeight: FontWeight.w300),
             ),
-           DigitalClockWidget(),
-           ClockWidget(),
-            
+            DigitalClockWidget(),
+            ClockWidget(),
             Padding(
               padding: const EdgeInsets.all(40),
               child: Text(
