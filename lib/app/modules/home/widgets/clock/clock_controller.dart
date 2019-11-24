@@ -6,22 +6,26 @@ part 'clock_controller.g.dart';
 class ClockController = _ClockBase with _$ClockController;
 
 const minSecAngle = math.pi / 30;
-const hourAngle =  math.pi / 6;
+const hourAngle = math.pi / 6;
 
 abstract class _ClockBase with Store {
   final ClockService clockService;
   _ClockBase(this.clockService) {
     clockService.clock$.listen((dateChanged) {
-      secondsAngle = dateChanged.second * minSecAngle;
-      minutesAngle = dateChanged.minute * minSecAngle;
-      hoursAngle = dateChanged.hour * hourAngle;
+      if (dateChanged?.hour != null &&
+          dateChanged?.minute != null &&
+          dateChanged?.second != null) {
+        secondsAngle = dateChanged.second * minSecAngle;
+        minutesAngle = dateChanged.minute * minSecAngle;
+        hoursAngle = dateChanged.hour * hourAngle;
+      }
     });
   }
 
   @observable
-  double minutesAngle;
+  double minutesAngle = 0.0;
   @observable
-  double secondsAngle;
+  double secondsAngle = 0.0;
   @observable
-  double hoursAngle;
+  double hoursAngle = 0.0;
 }
