@@ -9,30 +9,30 @@ part of 'app_controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$AppController on _AppBase, Store {
-  final _$valueAtom = Atom(name: '_AppBase.value');
+  final _$darkModeAtom = Atom(name: '_AppBase.darkMode');
 
   @override
-  int get value {
-    _$valueAtom.context.enforceReadPolicy(_$valueAtom);
-    _$valueAtom.reportObserved();
-    return super.value;
+  bool get darkMode {
+    _$darkModeAtom.context.enforceReadPolicy(_$darkModeAtom);
+    _$darkModeAtom.reportObserved();
+    return super.darkMode;
   }
 
   @override
-  set value(int value) {
-    _$valueAtom.context.conditionallyRunInAction(() {
-      super.value = value;
-      _$valueAtom.reportChanged();
-    }, _$valueAtom, name: '${_$valueAtom.name}_set');
+  set darkMode(bool value) {
+    _$darkModeAtom.context.conditionallyRunInAction(() {
+      super.darkMode = value;
+      _$darkModeAtom.reportChanged();
+    }, _$darkModeAtom, name: '${_$darkModeAtom.name}_set');
   }
 
   final _$_AppBaseActionController = ActionController(name: '_AppBase');
 
   @override
-  void increment() {
+  void changeTheme() {
     final _$actionInfo = _$_AppBaseActionController.startAction();
     try {
-      return super.increment();
+      return super.changeTheme();
     } finally {
       _$_AppBaseActionController.endAction(_$actionInfo);
     }

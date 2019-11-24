@@ -6,10 +6,10 @@ class AppController = _AppBase with _$AppController;
 
 abstract class _AppBase with Store {
   @observable
-  int value = 0;
+  bool darkMode = false;
 
   @action
-  void increment() {
-    value++;
+  void changeTheme() {
+    darkMode = !darkMode;
   }
 }

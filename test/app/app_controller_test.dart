@@ -18,9 +18,9 @@ void main() {
     });
 
     test("Set Value", () {
-      expect(app.value, equals(0));
-      app.increment();
-      expect(app.value, equals(1));
+      expect(app.darkMode, equals(0));
+      app.changeTheme();
+      expect(app.darkMode, equals(1));
     });
   });
 }
